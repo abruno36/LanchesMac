@@ -41,7 +41,7 @@
 
 > ## Acesso
 >
-> **Tipo Autenticação:** Usuário cadastrado através do administrador da conta da EXTRANET  
+> **Tipo Autenticação:** Usuário cadastrado através do IDENTITY  
 > **Tipo Autorização:** IDENTITY  
 > **Nível de Acesso:** Admin / Normal  
 > **Número aproximados de usuários:**  20
