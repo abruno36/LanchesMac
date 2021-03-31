@@ -42,9 +42,9 @@
 > ## Acesso
 >
 > **Tipo Autenticação:** Usuário cadastrado através do administrador da conta da EXTRANET  
-> **Tipo Autorização:** Tabela Extranet TBUSUARIO  
-> **Nível de Acesso:** Interno Fábrica  
-> **Número aproximados de usuários:**  10000
+> **Tipo Autorização:** IDENTITY  
+> **Nível de Acesso:** Admin / Normal  
+> **Número aproximados de usuários:**  20
 ---
 
 
