@@ -1,0 +1,18 @@
+﻿@model LanchesMac.Models.Categoria
+    <br />
+    <br />
+    <h2>Detalhes</h2>
+
+    <div>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>@Html.DisplayNameFor(model => model.CategoriaNome)</dt>
+            <dd>@Html.DisplayFor(model => model.CategoriaNome)</dd>
+            <dt>@Html.DisplayNameFor(model => model.Descricao)</dt>
+            <dd>@Html.DisplayFor(model => model.Descricao)</dd>
+        </dl>
+    </div>
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model.CategoriaId" class="btn btn-success btn-md">Editar</a> 
+        <a asp-action="Index" class="btn btn-warning btn-md">Retornar para a Lista</a>
+    </div>

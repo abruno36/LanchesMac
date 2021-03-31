@@ -1,0 +1,33 @@
+﻿@model IEnumerable<LanchesMac.Models.Categoria>
+
+<br/>
+<br />
+<h2>Relação Geral</h2>
+
+<p>
+    <a asp-action="Create" ><strong class="btn btn-success">Criar Nova Categoria</strong></a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th style="width: 55px"><span><strong>Gerenciar</strong></span></th>
+            <th>@Html.DisplayNameFor(model => model.CategoriaNome)</th>
+            <th>@Html.DisplayNameFor(model => model.Descricao)</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.CategoriaId" style="margin-left: -20px;"><span class="btn btn-primary btn-xs glyphicon glyphicon-pencil"></span></a>
+                <a asp-action="Details" asp-route-id="@item.CategoriaId" style="margin-right: 3px;"><span class="btn btn-default btn-xs glyphicon glyphicon-equalizer"></span></a>
+                <a asp-action="Delete" asp-route-id="@item.CategoriaId" style="margin-right: 3px;"><span class="btn btn-danger btn-xs glyphicon glyphicon-trash"></span></a>
+            </td>
+            <td>@Html.DisplayFor(modelItem => item.CategoriaNome)</td>
+            <td>@Html.DisplayFor(modelItem => item.Descricao)</td>
+
+
+        </tr>
+}
+    </tbody>
+</table>
