@@ -1,7 +1,9 @@
 ﻿using LanchesMac.Areas.Admin.Servicos;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
+using X.PagedList;
 
 namespace LanchesMac.Areas.Admin.Controllers
 {
@@ -20,8 +22,9 @@ namespace LanchesMac.Areas.Admin.Controllers
             return View();
         }
 
-        public async Task<IActionResult> RelatorioVendasSimples(DateTime? minDate, DateTime? maxDate)
+        public async Task<IActionResult> RelatorioVendasSimples(DateTime? minDate, DateTime? maxDate, int? page)
         {
+            
             if (!minDate.HasValue)
             {
                 minDate = new DateTime(DateTime.Now.Year, 1, 1);
@@ -35,6 +38,10 @@ namespace LanchesMac.Areas.Admin.Controllers
             ViewData["maxDate"] = maxDate.Value.ToString("yyyy-MM-dd");
 
             var result = await relatorioVendasService.FindByDateAsync(minDate, maxDate);
+
+            var pageNumber = page ?? 1;
+            var onePageOfProducts = result.ToPagedList(pageNumber, 10);
+            ViewBag.OnePageOfProducts = onePageOfProducts;
             return View(result);
         }
     }

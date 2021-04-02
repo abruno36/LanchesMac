@@ -52,7 +52,6 @@ namespace LanchesMac.Areas.Admin.Controllers
             var resultado = _context.Pedidos.AsNoTracking()
                            .AsQueryable();
 
-
             if (!string.IsNullOrWhiteSpace(filter))
             {
                 resultado = resultado.Where(p => p.Nome.Contains(filter));

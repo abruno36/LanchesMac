@@ -1,6 +1,5 @@
 ﻿using LanchesMac.Context;
 using LanchesMac.Models;
-using LanchesMac.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -11,15 +10,15 @@ namespace LanchesMac.Areas.Admin.Servicos
 {
     public class RelatorioVendasService
     {
-        private readonly AppDbContext context;
-        public RelatorioVendasService(AppDbContext _context)
+        private readonly AppDbContext _context;
+        public RelatorioVendasService(AppDbContext context)
         {
-            context = _context;
+            _context = context;
         }
 
         public async Task<List<Pedido>> FindByDateAsync(DateTime? minDate, DateTime? maxDate)
         {
-            var resultado = from obj in context.Pedidos select obj;
+            var resultado = from obj in _context.Pedidos select obj;
 
             if (minDate.HasValue)
             {
