@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LanchesMac_vr5.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20210330002510_TotalItensPedido")]
-    partial class TotalItensPedido
+    [Migration("20240331143510_PopularCategorias")]
+    partial class PopularCategorias
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

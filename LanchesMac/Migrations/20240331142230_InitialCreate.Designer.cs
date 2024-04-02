@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LanchesMac_vr5.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20210323105136_AdicionarIdenity")]
-    partial class AdicionarIdenity
+    [Migration("20240331142230_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -124,6 +124,7 @@ namespace LanchesMac_vr5.Migrations
                         .HasMaxLength(10);
 
                     b.Property<string>("Cidade")
+                        .IsRequired()
                         .HasColumnType("nvarchar(50)")
                         .HasMaxLength(50);
 
@@ -142,6 +143,7 @@ namespace LanchesMac_vr5.Migrations
                         .HasMaxLength(100);
 
                     b.Property<string>("Estado")
+                        .IsRequired()
                         .HasColumnType("nvarchar(10)")
                         .HasMaxLength(10);
 
@@ -168,6 +170,9 @@ namespace LanchesMac_vr5.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(25)")
                         .HasMaxLength(25);
+
+                    b.Property<int>("TotalItensPedido")
+                        .HasColumnType("int");
 
                     b.HasKey("PedidoId");
 
